@@ -12,8 +12,3 @@ playground.filter('reversify', function() {
 		}
 	}
 });
-playground.filter('searchoptions', function() {
-	return function(text) {
-
-	}
-})

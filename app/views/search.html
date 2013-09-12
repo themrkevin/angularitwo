@@ -1,7 +1,12 @@
 <section class="practice-2" ng-controller="SearchCtrl">
 	<h1>Seaching &amp; Datasets</h1>
 	<input type="text" ng-model="search.$">
-	<select ng-model="filteroptions" ng-options="type.option for type in searchfilters">
+	<!-- <select ng-model="filteroptions" ng-options="type.option for type in searchfilters">
+	</select> -->
+	<select ng-model="filteroptions">
+		<option value="search.$">All</option>
+		<option value="search.name">Name</option>
+		<option value="search.id">ID</option>
 	</select>
 	<ul class="data-table">
 		<li ng-repeat="poke in pokes | filter:search">
@@ -9,7 +14,6 @@
 			<div class="details">
 				<h2>{{poke.name}}</h2>
 				<p><strong>Id</strong> {{poke.id}}</p>
-				{{poke.type.length}}
 			</div>
 		</li>
 	</ul>
