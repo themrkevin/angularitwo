@@ -13,13 +13,24 @@ playground.factory('Data', function() {
 //	Filters
 playground.filter('reversify', function() {
 	return function(text) {
-		return text.split('').reverse().join('') + ' - via filter';
+		if(text) {
+			return text.split('').reverse().join('') + ' - via filter';
+		}
 	}
 });
 //	Controllers
 playground.controller('MsgCtrl', function($scope, Data) {
 	$scope.data = Data;
 	$scope.reversify = function(message) {
-		return message.split('').reverse().join('') + ' - via method';
+		if(message) {
+			return message.split('').reverse().join('') + ' - via method';
+		}
 	}
+});
+playground.controller('SearchCtrl', function($scope, $http) {
+	$http
+		.get('json/pokes.json')
+		.then(function(res) {
+			$scope.pokes = res.data;
+		})
 });

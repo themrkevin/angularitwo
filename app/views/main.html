@@ -1,6 +1,18 @@
-<div class="practice-1" ng-controller="MsgCtrl">
-    <input type="text" ng-model="data.message">
-    <h2>{{data.message}}</h2>
-    <p><strong>{{data.message | reversify}}</strong></p>
-    <p><em>{{reversify(data.message)}}</em></p>
+<div ng-controller="TheCtrl">
+	<section class="practice-1">
+		<h1>Bindings, Controllers, &amp; Filters</h1> 
+	    <input type="text" ng-model="data.message">
+	    <h2>{{data.message}}</h2>
+	    <p><strong>{{data.message | reversify}}</strong></p>
+	    <p><em>{{reversify(data.message)}}</em></p>
+	</section>
+	<section class="practice-2">
+		<h1>Seaching &amp; Datasets</h1>
+		<input type="text" ng-model="search">
+		<table>
+			<tr ng-repeat="poke of pokes">
+				<td>{{poke.name}}</td>
+			</tr>
+		</table>
+	</section>
 </div>

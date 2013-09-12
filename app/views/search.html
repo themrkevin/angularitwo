@@ -1,0 +1,14 @@
+<section class="practice-2" ng-controller="SearchCtrl">
+	<h1>Seaching &amp; Datasets</h1>
+	<input type="text" ng-model="search.$">
+	<ul class="data-table">
+		<li ng-repeat="poke in pokes | filter:search">
+			<img src="{{poke.img}}" class="mug" />
+			<div class="details">
+				<h2>{{poke.name}}</h2>
+				<p><strong>Id</strong> {{poke.id}}</p>
+				{{poke.type.length}}
+			</div>
+		</li>
+	</ul>
+</section>
