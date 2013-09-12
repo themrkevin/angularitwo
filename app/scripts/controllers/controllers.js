@@ -4,12 +4,6 @@
  *	Playing with AngularJS
  *	tutorials and random playtime
  **/
-//	Services
-playground.factory('Data', function() {
-	return {
-		message: "I'm data from a service",
-	}
-});
 //	Controllers
 playground.controller('MsgCtrl', function($scope, Data) {
 	$scope.data = Data;
@@ -21,11 +15,11 @@ playground.controller('MsgCtrl', function($scope, Data) {
 });
 playground.controller('SearchCtrl', function($scope, $http) {
 	$scope.searchfilters = [
-		{option:'all', type:'search'},
-		{option:'by name', type:'search.name'},
-		{option:'by type', type:'search.type'},
-		{option:'by id', type:'search.id'},
-		{option:'by moves', type:'search.moves'}
+		{option:'all', type:'filter:search'},
+		{option:'by name', type:'filter:search.name'},
+		{option:'by type', type:'filter:search.type'},
+		{option:'by id', type:'filter:search.id'},
+		{option:'by moves', type:'filter:search.moves'}
 	];
 	$scope.filteroptions = $scope.searchfilters[0]; //default All
 	$http

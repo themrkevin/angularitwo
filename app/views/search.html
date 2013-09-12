@@ -1,6 +1,8 @@
 <section class="practice-2" ng-controller="SearchCtrl">
 	<h1>Seaching &amp; Datasets</h1>
 	<input type="text" ng-model="search.$">
+	<select ng-model="filteroptions" ng-options="type.option for type in searchfilters">
+	</select>
 	<ul class="data-table">
 		<li ng-repeat="poke in pokes | filter:search">
 			<img src="{{poke.img}}" class="mug" />
